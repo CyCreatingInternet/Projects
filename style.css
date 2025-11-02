@@ -3,32 +3,38 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    background: radial-gradient(circle at top left, #0d1117, #010409);
+    background: radial-gradient(circle at 20% 20%, #0d1117, #010409);
     color: #e6edf3;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
 }
 
 /* --- Navbar --- */
 .navbar {
     width: 100%;
-    background-color: #161b22;
+    background: rgba(22, 27, 34, 0.9);
     border-bottom: 1px solid #30363d;
+    backdrop-filter: blur(12px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 2rem;
+    padding: 0.9rem 1.4rem;
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background 0.3s ease;
 }
 
 .navbar h2 {
     color: #58a6ff;
     font-weight: 700;
+    font-size: 1.3rem;
     margin: 0;
+    letter-spacing: 0.5px;
 }
 
 .navbar nav a {
@@ -36,32 +42,41 @@ body {
     text-decoration: none;
     margin-left: 1.2rem;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .navbar nav a:hover {
     color: #58a6ff;
+    transform: translateY(-1px);
 }
 
 /* --- Header / Top Container --- */
 .top_container {
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 12px;
+    background: rgba(22, 27, 34, 0.85);
+    border: 1px solid rgba(48, 54, 61, 0.8);
+    border-radius: 16px;
     width: 90%;
-    max-width: 800px;
+    max-width: 780px;
     text-align: center;
-    padding: 2rem;
+    padding: 2.2rem 2rem;
     margin-top: 2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease;
+}
+
+.top_container:hover {
+    transform: scale(1.01);
 }
 
 .top_container h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 700;
     margin-bottom: 0.3rem;
     color: #f0f6fc;
+    background: linear-gradient(90deg, #58a6ff, #00bfae);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .top_container p {
@@ -77,24 +92,25 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 2rem 0 3rem;
 }
 
 /* --- Einzelne Karte --- */
 .first-card {
     background: linear-gradient(180deg, #161b22 0%, #0f141a 100%);
     border: 1px solid #30363d;
-    border-radius: 14px;
+    border-radius: 16px;
     width: 260px;
     overflow: hidden;
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .first-card:hover {
-    transform: translateY(-6px) scale(1.02);
+    transform: translateY(-6px) scale(1.03);
     border-color: #58a6ff;
-    box-shadow: 0 8px 20px rgba(88, 166, 255, 0.15);
+    box-shadow: 0 8px 22px rgba(88, 166, 255, 0.18);
 }
 
 .first-card img {
@@ -121,43 +137,79 @@ body {
     background: linear-gradient(90deg, #238636, #2ea043);
     border: none;
     color: #fff;
-    border-radius: 8px;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
+    border-radius: 10px;
+    padding: 0.7rem 1.3rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.1rem;
     cursor: pointer;
     font-weight: 600;
-    transition: transform 0.15s, box-shadow 0.15s;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(35, 134, 54, 0.25);
 }
 
 .first-card button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(35, 134, 54, 0.4);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 14px rgba(35, 134, 54, 0.35);
 }
 
 /* --- Footer --- */
 footer {
     width: 100%;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1.8rem 0;
     border-top: 1px solid #30363d;
     color: #8b949e;
     font-size: 0.85rem;
+    backdrop-filter: blur(6px);
 }
 
-/* --- Responsive --- */
-@media (max-width: 600px) {
+/* --- Responsive Mobile Optimierung --- */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .navbar nav a {
+        margin: 0 0.6rem;
+        font-size: 0.95rem;
+    }
+
     .top_container {
         width: 95%;
-        padding: 1.5rem;
+        padding: 1.6rem 1.3rem;
+        margin-top: 1.5rem;
+        border-radius: 14px;
+    }
+
+    .top_container h1 {
+        font-size: 1.7rem;
+    }
+
+    .card-container {
+        gap: 1.2rem;
+        margin: 1.5rem 0 2.5rem;
     }
 
     .first-card {
         width: 95%;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    .navbar {
-        flex-direction: column;
-        gap: 0.5rem;
+    .first-card img {
+        height: 180px;
+    }
+
+    .first-card button {
+        width: 85%;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 1.2rem 0;
     }
 }
