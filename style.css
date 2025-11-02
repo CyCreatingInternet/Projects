@@ -52,34 +52,39 @@ body {
 
 /* --- Header / Top Container --- */
 .top_container {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
+    border-radius: 18px;
     width: 90%;
     max-width: 760px;
     text-align: center;
-    padding: 2.5rem 2rem;
-    margin-top: 2rem;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease;
+    padding: 2.2rem 2rem;
+    margin-top: 2.5rem;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
 }
 
 .top_container:hover {
-    transform: scale(1.01);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .top_container h1 {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
+    letter-spacing: -0.3px;
     color: #ffffff;
-    letter-spacing: -0.5px;
+    background: linear-gradient(180deg, #ffffff, #d6d6d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .top_container p {
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.3rem;
 }
 
 /* --- Karten-Container --- */
@@ -172,6 +177,11 @@ footer {
         padding: 1rem;
         text-align: center;
         backdrop-filter: blur(25px);
+        background: rgba(15, 15, 18, 0.6);
+    }
+
+    .navbar h2 {
+        font-size: 1.1rem;
     }
 
     .navbar nav a {
@@ -180,14 +190,29 @@ footer {
     }
 
     .top_container {
-        width: 94%;
-        padding: 1.8rem 1.2rem;
+        width: 92%;
+        padding: 1.3rem 1rem 1.4rem;
         border-radius: 16px;
-        margin-top: 1.6rem;
+        margin-top: 1.2rem;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .top_container h1 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+        letter-spacing: -0.2px;
+        background: linear-gradient(180deg, #fff, #d2d2d2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .top_container p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.45);
+        margin-top: 0.2rem;
     }
 
     .card-container {
