@@ -2,9 +2,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    background: radial-gradient(circle at 20% 20%, #0d1117, #010409);
-    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+    background: radial-gradient(circle at top left, #0b0c0f, #000000);
+    color: #f5f5f7;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,52 +16,52 @@ body {
 /* --- Navbar --- */
 .navbar {
     width: 100%;
-    background: rgba(22, 27, 34, 0.9);
-    border-bottom: 1px solid #30363d;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(20px);
+    background: rgba(15, 15, 18, 0.75);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.9rem 1.4rem;
+    padding: 0.9rem 1.8rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    transition: background 0.3s ease;
+    transition: backdrop-filter 0.3s ease, background 0.3s ease;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar h2 {
-    color: #58a6ff;
-    font-weight: 700;
-    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.3px;
     margin: 0;
-    letter-spacing: 0.5px;
 }
 
 .navbar nav a {
-    color: #c9d1d9;
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     margin-left: 1.2rem;
     font-weight: 500;
-    transition: color 0.25s ease, transform 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 .navbar nav a:hover {
-    color: #58a6ff;
-    transform: translateY(-1px);
+    color: #ffffff;
 }
 
 /* --- Header / Top Container --- */
 .top_container {
-    background: rgba(22, 27, 34, 0.85);
-    border: 1px solid rgba(48, 54, 61, 0.8);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
     width: 90%;
-    max-width: 780px;
+    max-width: 760px;
     text-align: center;
-    padding: 2.2rem 2rem;
+    padding: 2.5rem 2rem;
     margin-top: 2rem;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease;
 }
 
@@ -70,86 +70,87 @@ body {
 }
 
 .top_container h1 {
-    font-size: 2.1rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-    color: #f0f6fc;
-    background: linear-gradient(90deg, #58a6ff, #00bfae);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
 }
 
 .top_container p {
-    font-size: 1rem;
-    color: #8b949e;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.55);
 }
 
 /* --- Karten-Container --- */
 .card-container {
-    width: 90%;
+    width: 92%;
     max-width: 1000px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.8rem;
     margin: 2rem 0 3rem;
 }
 
 /* --- Einzelne Karte --- */
 .first-card {
-    background: linear-gradient(180deg, #161b22 0%, #0f141a 100%);
-    border: 1px solid #30363d;
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
     width: 260px;
     overflow: hidden;
     text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    backdrop-filter: blur(16px);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .first-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    border-color: #58a6ff;
-    box-shadow: 0 8px 22px rgba(88, 166, 255, 0.18);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 .first-card img {
     width: 100%;
     height: 160px;
     object-fit: cover;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .first-card h1 {
     font-size: 1.1rem;
     margin: 1rem 0 0.3rem;
-    color: #c9d1d9;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 .first-card p {
     font-size: 0.9rem;
-    color: #8b949e;
-    padding: 0 1rem 1rem;
+    color: rgba(255, 255, 255, 0.55);
+    padding: 0 1.2rem 1rem;
 }
 
 /* --- Button --- */
 .first-card button {
-    background: linear-gradient(90deg, #238636, #2ea043);
+    background: linear-gradient(180deg, #ffffff 0%, #e8e8ea 100%);
+    color: #000;
     border: none;
-    color: #fff;
     border-radius: 10px;
-    padding: 0.7rem 1.3rem;
+    padding: 0.65rem 1.3rem;
     font-size: 0.9rem;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1.3rem;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.2s ease;
-    box-shadow: 0 3px 10px rgba(35, 134, 54, 0.25);
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
 }
 
 .first-card button:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 6px 14px rgba(35, 134, 54, 0.35);
+    background: linear-gradient(180deg, #f5f5f7 0%, #dcdcdc 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
 }
 
 /* --- Footer --- */
@@ -157,10 +158,10 @@ footer {
     width: 100%;
     text-align: center;
     padding: 1.8rem 0;
-    border-top: 1px solid #30363d;
-    color: #8b949e;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 0.85rem;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(12px);
 }
 
 /* --- Responsive Mobile Optimierung --- */
@@ -170,22 +171,23 @@ footer {
         gap: 0.4rem;
         padding: 1rem;
         text-align: center;
+        backdrop-filter: blur(25px);
     }
 
     .navbar nav a {
-        margin: 0 0.6rem;
+        margin: 0 0.5rem;
         font-size: 0.95rem;
     }
 
     .top_container {
-        width: 95%;
-        padding: 1.6rem 1.3rem;
-        margin-top: 1.5rem;
-        border-radius: 14px;
+        width: 94%;
+        padding: 1.8rem 1.2rem;
+        border-radius: 16px;
+        margin-top: 1.6rem;
     }
 
     .top_container h1 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 
     .card-container {
@@ -194,9 +196,8 @@ footer {
     }
 
     .first-card {
-        width: 95%;
-        border-radius: 14px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        width: 94%;
+        border-radius: 16px;
     }
 
     .first-card img {
@@ -210,6 +211,6 @@ footer {
 
     footer {
         font-size: 0.8rem;
-        padding: 1.2rem 0;
+        padding: 1.3rem 0;
     }
 }
